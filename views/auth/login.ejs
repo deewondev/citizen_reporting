@@ -1,0 +1,22 @@
+<div class="login-container">
+    <% if (success !== '') { %>
+        <div class="custom-alert ca-success" id="myAlert">
+            <span class="close-btn close-success" onclick="closeAlert('successAlert')">×</span>
+            <p><%= success %></p>
+        </div>
+    <% } %>
+    
+    <% if (danger !== '') { %>
+        <div class="custom-alert ca-danger" id="myAlert">
+            <span class="close-btn close-danger" onclick="closeAlert('dangerAlert')">×</span>
+            <p><%= danger %></p>
+        </div>
+    <% } %>
+    <h3>Login</h3>
+    <form id="login-form" action="/login" method="POST">
+        <input type="text" name="username" placeholder="Username" required autocomplete="off">
+        <input type="password" name="password" placeholder="Password" required autocomplete="off">
+        <input type="submit" value="Login" class="btn-login">
+        <p>Not yet a member? <a href="/register">Sign up</a></p>
+    </form>
+</div>

@@ -1,0 +1,44 @@
+.login-container, .register-container {
+    max-width: 60%;
+    margin: 50px auto;
+    background-color: var(--white-01);
+    padding: 50px 30px;
+    box-shadow: var(--shadow);
+}
+
+.login-container > h3, .register-container > h3 {
+    font-weight: 600;
+    font-size: var(--font-size-lg);
+    text-transform: uppercase;
+    text-align: center;
+    margin: 10px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="search"],
+input[type="submit"],
+select,
+textarea {
+    font-family: 'Poppins', sans-serif;
+    font-size: var(--font-size-base);
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 16px;
+    background-color: transparent;
+    border: 1px solid var(--gray);
+}
+
+input[type="submit"] {
+    margin-bottom: 0;
+    background-color: var(--blue);
+    color: var(--white-01);
+    border: none;
+    cursor: pointer;
+}
+
+#login-form a, #register-form a {
+    color: var(--blue);
+}

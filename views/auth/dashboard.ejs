@@ -1,0 +1,50 @@
+<div class="dashboard">
+    <h3>Dashboard</h3>
+
+    <% if (success !== '') { %>
+        <div class="custom-alert ca-success" id="myAlert">
+            <span class="close-btn close-success" onclick="closeAlert('successAlert')">×</span>
+            <p><%= success %></p>
+        </div>
+    <% } %>
+    
+    <% if (danger !== '') { %>
+        <div class="custom-alert ca-danger" id="myAlert">
+            <span class="close-btn close-danger" onclick="closeAlert('dangerAlert')">×</span>
+            <p><%= danger %></p>
+        </div>
+    <% } %>
+    <div class="dashboard-content">
+        <p>Take a quick tour on the options below to get familiarized with it.</p>
+
+        <div class="display">
+            <a href="/all-posts">
+                <div class="display-item">
+                    <span class="first"> <%= display[0].first %> </span>
+                    <span class="second"> <%= display[0].second %> </span>
+                </div>
+            </a>
+
+            <a href="/add-post">
+                <div class="display-item">
+                    <span class="first"> <%= display[1].first %> </span>
+                    <span class="second"> <%= display[1].second %> </span>
+                </div>
+            </a>
+
+            <a href="/subscribers">
+                <div class="display-item">
+                    <span class="first"> <%= display[2].first %> </span>
+                    <span class="second"> <%= display[2].second %> </span>
+                </div>
+            </a>
+
+            <a href="/allUsers">
+                <div class="display-item">
+                    <span class="first"> <%= display[3].first %> </span>
+                    <span class="second"> <%= display[3].second %> </span>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

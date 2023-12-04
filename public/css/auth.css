@@ -1,0 +1,153 @@
+.home__user {
+    text-transform: uppercase;
+}
+
+.site-wrap-auth {
+    margin-bottom: 100px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.main {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+}
+
+button {
+    cursor: pointer;
+}
+
+.dashboard, .sidebar {
+    flex: 1;
+}
+
+.dashboard {
+    background-color: var(--white-01);
+    box-shadow: var(--shadow);
+    padding: 10px 30px 30px;
+}
+
+.dashboard > h3 {
+    margin: 0 0 50px;
+    color: var(--admin);
+}
+
+.dashboard input[type="submit"] {
+    background-color: var(--admin);
+}
+
+.display {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+    gap: 40px;
+}
+
+.display a {
+    border-radius: 10px;
+}
+
+.display-item {
+    width: 180px;
+    height: 180px;
+    padding: 20px;
+    color: var(--white-01);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.display a:nth-child(odd) {
+    background-color: var(--instagram);
+}
+
+.display a:nth-child(even) {
+    background-color: var(--whatsapp);
+}
+
+.display-item > .first {
+    font-size: 22px;
+}
+
+.display-item > .second {
+    font-size: 30px;
+}
+
+
+@media screen and (max-width: 597px) {
+    .main {
+        flex-direction: column;
+    }
+
+    .dashboard {
+        max-width: 100%;
+        flex: 1;
+    }
+}
+
+
+
+#add-form, #edit-form {
+    background-color: var(--white-01);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+}
+
+.table-container {
+    /* max-width: 100%; */
+    margin: 20px auto;
+    overflow-x: auto;
+}
+
+.admin-table {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+}
+
+.admin-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-table thead {
+    background-color: #3498db;
+    color: #fff;
+}
+
+.admin-table th, .admin-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.admin-table .long {
+    overflow-x: auto;
+}
+
+.admin-table tbody tr:hover {
+    background-color: #f5f5f5;
+}
+
+.admin-table td.action a button {
+    margin-bottom: 10px;
+}
+
+.admin-table button, .admin-table a button {
+    padding: 8px 12px;
+    margin-right: 5px;
+    cursor: pointer;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+}
+
+.admin-table button:hover, .admin-table a button:hover {
+    background-color: #2980b9;
+}
