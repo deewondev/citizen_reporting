@@ -1,0 +1,101 @@
+<div class="slider">
+    <div class="slide-caption">
+        <p>Featured Incidents</p>
+    </div>
+    <div class="slides">
+    <% featuredPosts.forEach(post => { %>
+        <div class="slide-content">
+            <div class="post-img-container">
+                <a href="#" class="post-img-wrap">
+                    <img loading="lazy" src="https://cdn.pixabay.com/photo/2017/12/22/08/01/school-supplies-3033204_1280.jpg" alt="image slider">
+                </a>
+            </div>
+            <div class="post-info-wrap">
+                <div>
+                    <span class="tag-item"> <%= post.category %> </span>
+                </div>
+                <h2 class="post-title"> <%= post.title %> </h2>
+                <div class="post-excerpt">  
+                    <p> <%= post.description %> </p>
+                </div>
+                <div class="post-meta">
+                    <a href="/post/<%= post._id %>" class="btn-slide">Read More</a>
+                </div>
+            </div>
+        </div>
+    <% }) %>
+    </div>
+    
+    <div class="tns-controls">
+        <p>Slide <span class="currentIndex">0</span> of <span class="totalIndex">0</span></p>
+        <div class="controls">
+            <button type="button" class="btn-controls prev">Prev</button>
+            <button type="button" class="btn-controls next">Next</button>
+        </div>
+    </div>
+</div>
+
+<div class="all-posts">
+    <div class="all-posts-container">
+        <% if (posts && posts.length > 0) { %>
+            <% posts.forEach(post => { %>
+                <article class="all-posts-card" data-category="<%= post.category %>">
+                    <a href="/post/<%= post._id %>">
+                        <div class="all-posts-tag">
+                            <span class="tag-item"> <%= post.category %> </span>
+                        </div>
+                        <div class="all-posts-title">
+                            <h3> <%= post.title %> </h3>
+                        </div>
+                        <div class="all-posts-excerpt">
+                            <p> <%= post.description %> </p>
+                        </div>
+                        <div class="all-posts-meta">
+                            <span class="read-time"> <%= getTimeDifference(post.createdAt) %> </span>
+                        </div>
+                    </a>
+                </article>
+            <% }) %>
+            <div class="load-more">
+                <button class="btn" id="load-more-btn">Load More</button>
+            </div>
+        <% } else if (posts) { %>
+            <article class="all-posts-card" data-category="<%= posts.category %>">
+                <a href="/post/<%= posts._id %>">
+                    <div class="all-posts-tag">
+                        <span class="tag-item"> <%= posts.category %> </span>
+                    </div>
+                    <div class="all-posts-title">
+                        <h3> <%= posts.title %> </h3>
+                    </div>
+                    <div class="all-posts-excerpt">
+                        <p> <%= posts.description %> </p>
+                    </div>
+                    <div class="all-posts-meta">
+                        <span class="read-time"> <%= getTimeDifference(posts.createdAt) %> </span>
+                    </div>
+                </a>
+            </article>
+            <div class="load-more">
+                <button class="btn" id="load-more-btn">Load More</button>
+            </div>
+        <% } else { %>
+            <h3>No Post Found!!!</h3>
+        <% } %>
+    </div>
+    <div class="sidebar-content">
+        <div class="search">
+            <form action="/search" class="search__form" role="search" method="POST">
+                <input type="search" name="searchTerm" aria-label="Search" placeholder="Search site by incident title...">
+            </form>
+        </div>
+
+        <label for="category">Filter by Category:</label>
+        <select id="category" name="category">
+            <option value="all">All</option>
+            <option value="accident">Accident</option>
+            <option value="fighting">Fighting</option>
+            <option value="rioting">Rioting</option>
+        </select>
+    </div>
+</div>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="<%= process.env.APP_DESCRIPTION %>">
+    <title><%= process.env.APP_TITLE %></title>
+    <link rel="stylesheet" href="/css/styles.css" type="text/css">
+    <link rel="stylesheet" href="/css/form.css" type="text/css">
+    <script src="/js/index.js" type="module" defer></script>
+    <script src="/js/backToTop.js" type="module" defer></script>
+    <script src="/js/loadMore.js" type="module" defer></script>
+    <script src="/js/timeDiff.js" type="module" defer></script>
+    <script src="/js/filterCategory.js" type="module" defer></script>
+    <script src="/js/confirmDelete.js" defer></script>
+    <script src="/js/formValidation.js" defer></script>
+</head>
+<body>
+    <div class="site-wrap">
+        <% if (isLoggedIn) { %>
+            <%- include('../partials/header-auth') %>
+        <% } else { %>
+            <%- include('../partials/header') %>
+        <% } %>
+        <main class="main">
+            <%- body %>
+        </main>
+        <% if (currentPage !== '/login' && currentPage !== '/register') { %>
+            <%- include('../partials/footer') %>
+        <% } %>
+    </div>
+</body>
+</html>
